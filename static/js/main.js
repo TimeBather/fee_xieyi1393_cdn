@@ -473,14 +473,16 @@ if (_wid>1024 && _sidebar.length) {
             sheight += current.height() + 15
         };
     })
-
-    rollFirst.affix({
-        offset: {
-            top: _sidebar.height(),
-            bottom: $('.footer').outerHeight()
-        }
-    })
-
+		try{
+	    rollFirst.affix({
+	        offset: {
+	            top: _sidebar.height(),
+	            bottom: $('.footer').outerHeight()
+	        }
+	    });
+		}catch(err){
+			console.info('The error which let javascript stop has been caughted');
+		}
 
 }
 
